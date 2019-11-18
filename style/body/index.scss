@@ -1,0 +1,10 @@
+@import './nliHome';
+@import './about';
+@import './loginPage';
+
+#main {
+    height: 100%;
+    min-height: 42rem;
+    @include flex-column;
+    background-color: $primary-background;
+}

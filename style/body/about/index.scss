@@ -1,0 +1,40 @@
+.about {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    @include flex-column();
+    background-color: $primary-background;
+    color: $primary-font;
+    font-family: $font-p;
+    flex-grow: 1;
+    h2 {
+        font-size: 2.5rem;
+        margin: 1.5rem 0 1.5rem 2rem;
+    }
+    p {
+        font-size: 1.25rem;
+        margin: 0.5rem 3rem 0 2.5rem;
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-style: italic;
+        }
+    }
+    .secondaryBtn {
+        border-style: outset;
+        border-radius: 10px;
+        margin-left: 2.5rem;
+        width: 35%;
+        padding: 0.5rem 0;
+        margin-top: 0.75rem;
+        transition: 0.5s;
+        cursor: pointer;
+        border-color: $s-button-font;
+        background-color: $s-button-background;
+        color: $s-button-font;
+    }
+    .secondaryBtn:hover {
+        background-color: $s-selected;
+    }
+
+}

@@ -1,0 +1,55 @@
+.loginPage {
+    background-color: $primary-background;
+    color: $primary-font;
+    font-family: $font-p;
+    @include flex-column();
+    width: 45%;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.1rem;
+    form {
+        @include flex-column();
+        width: 44%;
+        label {
+            @include flex-row();
+            justify-content: space-evenly;
+            align-items: baseline;
+            margin-top: 0.75rem;
+        }
+        input[type="text"], input[type="password"] {
+            background-color: $secondary-background;
+            color: $secondary-font;
+            transition: 0.5s;
+            border: none;
+            border-radius: 10px;
+            padding: .5rem;
+        }
+        input[type="text"]:hover, input[type='text']:focus, input[type="password"]:hover, input[type="password"]:focus {
+            background-color: $secondary-selected;
+        
+        }
+        input[type="submit"] {
+            background-color: $button-background;
+            color: $button-font;
+            border-color: $button-font;
+            border: none;
+            border-radius: 10px;
+            padding: 1rem;
+            width: 50%;
+            align-self: center;
+            margin-top: 0.60rem;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="submit"]:focus {
+            background-color: $button-selected;
+        }
+
+    }
+    p {
+        margin-top: 0.75rem;
+        cursor: pointer;
+        text-decoration: italic;
+    }
+}

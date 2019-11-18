@@ -1,0 +1,44 @@
+nav {
+    width: 100%;
+    background-color: $secondary-background;
+    color: $secondary-font;
+    font-family: $font-s;
+    @include flex-row(); 
+    justify-content: space-between;
+    //padding: 1.25rem 0 1.25rem 0;
+    height: 3.5rem;
+
+    .navBox {
+        height: 100%;
+        @include flex-row();
+        margin: auto 2.21rem;
+        p, button {
+            flex-grow: 1;
+            width: 100%;
+            text-align: center;
+            border: 5px inset $secondary-background;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        p:hover, button:hover {
+            background-color: $secondary-selected;
+            border-color: $secondary-selected;
+        }
+        button {
+            background-color: inherit;
+            font-family: inherit;
+            padding: 0 1.5rem;
+        }
+        .selected {
+            background-color: $secondary-selected;
+            border-color: $secondary-selected;
+        }
+    }
+    .staticBoxes {
+        width: 25%;
+        justify-content: space-around;
+    }
+}

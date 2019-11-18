@@ -1,0 +1,13 @@
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: property;
+}
+@mixin flex-row() {
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+}

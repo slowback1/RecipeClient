@@ -1,0 +1,26 @@
+footer {
+    padding-top: 5rem;
+    @include flex-row();
+    background-color: $secondary-background;
+    color: $secondary-font;
+    font-family: $font-s;
+    justify-content: space-between;
+    align-items: flex-end;
+    .cr {
+        div {
+            @include flex-row();
+        }
+    }
+    .cr, .legal {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .legal {
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-style: italic;
+        }
+    }
+}

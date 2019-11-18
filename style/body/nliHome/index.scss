@@ -1,0 +1,66 @@
+    .hero {
+        @include flex-row();
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        min-height: 48rem;
+        width: 100%;
+        background-image: url('./img/hero.jpg');
+        background-position: center;
+        background-size: cover;
+        .ctaBox {
+            @include flex-column();
+            background-color: $primary-background;
+            color: $primary-font;
+            width: 45%;
+            height: 15rem;
+            opacity: 0.9;
+            transition: 0.5s;
+            border-radius: 10px;
+            font-family: $font-p;
+            h1 {
+                text-align: center;
+                font-size: 2rem;
+                margin-top: 1.5rem;
+            }
+            h3 {
+                text-align: center;
+                font-size: 1.5rem;
+                margin-top: 0.25rem;
+            }
+            .ctaButtons {
+                margin-top: 2rem;
+                @include flex-column();
+                justify-content: center;
+                align-items: center;
+                button {
+                    border-style: outset;
+                    border-radius: 5px;
+                    width: 35%;
+                    padding: .5rem 0;
+                    margin-top: 0.75rem;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+                .ctaPrimary {
+                    border-color: $button-font;
+                    background-color: $button-background;
+                    color: $button-font;
+                }
+                .ctaPrimary:hover {
+                    background-color: $button-selected;
+                }
+                .ctaSecondary {
+                    border-color: $s-button-font;
+                    background-color: $s-button-background;
+                    color: $s-button-font;
+                }
+                .ctaSecondary:hover {
+                    background-color: $s-selected;
+                }
+            }
+        }
+        .ctaBox:hover {
+            opacity: 1;
+        }
+    }
