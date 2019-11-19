@@ -1,0 +1,70 @@
+#recipieDetails {
+    @include flex-column();
+    font-family: $font-p;
+    background-color: $s-button-background;
+    color: $s-button-font;
+    width: 80%;
+    margin: 1rem auto;
+    .recBox {
+        h4 {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: .75rem 0;
+            background-color: $button-selected;
+            color: $button-font;
+        }
+        .recdesc {
+            margin: 0;
+            padding: 1.5rem 0.5rem;
+            background-color: $s-selected;
+        }
+        .ingredients {
+            @include flex-row();
+            flex-wrap: wrap;
+            .ingredient {
+                @include flex-row();
+                height: 1.5rem;
+                margin-top: 1.5rem;
+                margin-left: 0.5rem;
+                div {
+                    width: 20%;
+                    margin-right: 10%;
+                    border: 2px solid $primary-background;
+                    border-top-color: $primary-font;
+                    border-top-left-radius: 10px;
+                    align-self: flex-start;
+                }
+                .ing0 {
+                    height: 1.3rem;
+                    border-bottom: 0.2rem solid $button-selected;
+                }
+                .ing1 {
+                    height: 0.9rem;
+                    border-bottom: 0.6rem solid $secondary-selected;
+                }
+                .ing2 {
+                    border-bottom: 1.3rem solid $primary-background;
+                    height: 0.2rem;
+                }
+                width: 20%;
+                height: 10%;
+            }
+        }
+        .directions {
+            @include flex-column();
+            margin-left: 1.5rem;
+            .dir {
+                margin-top: 1.5rem;
+            }
+            .subDir {
+                list-style-type: circle;
+                margin-left: 1.5rem;
+            }
+            padding-bottom: 3rem;
+            
+        }
+    }
+
+}

@@ -34,10 +34,6 @@ body {
   line-height: 1;
 }
 
-ol, ul {
-  list-style: none;
-}
-
 blockquote, q {
   quotes: none;
 }
@@ -68,13 +64,13 @@ nav {
   justify-content: space-between;
   height: 3.5rem;
 }
-nav .navBox {
+nav .navBox, nav #loginBox {
   height: 100%;
   display: flex;
   flex-direction: row;
   margin: auto 2.21rem;
 }
-nav .navBox p, nav .navBox button {
+nav .navBox p, nav .navBox button, nav #loginBox p, nav #loginBox button {
   flex-grow: 1;
   width: 100%;
   text-align: center;
@@ -85,16 +81,16 @@ nav .navBox p, nav .navBox button {
   transition: 0.5s;
   cursor: pointer;
 }
-nav .navBox p:hover, nav .navBox button:hover {
+nav .navBox p:hover, nav .navBox button:hover, nav #loginBox p:hover, nav #loginBox button:hover {
   background-color: #ac9a6b;
   border-color: #ac9a6b;
 }
-nav .navBox button {
+nav .navBox button, nav #loginBox button {
   background-color: inherit;
   font-family: inherit;
   padding: 0 1.5rem;
 }
-nav .navBox .selected {
+nav .navBox .selected, nav #loginBox .selected {
   background-color: #ac9a6b;
   border-color: #ac9a6b;
 }
@@ -294,6 +290,108 @@ footer .legal a {
   margin-top: 0.75rem;
   cursor: pointer;
   text-decoration: italic;
+}
+
+#recipiePage {
+  font-family: "Fira Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+#recipiePage h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0 0 1.5rem;
+}
+#recipiePage .recBox {
+  border: 3px solid #be5231;
+  border-right: none;
+  border-bottom: none;
+  width: 80%;
+  align-self: flex-end;
+  margin: 0.75rem 0;
+  cursor: pointer;
+}
+#recipiePage .recBox h4 {
+  font-size: 1.25rem;
+  background-color: #ad4120;
+  color: #e9dce0;
+  padding: 0.75rem;
+}
+#recipiePage .recBox p {
+  font-size: 1rem;
+  background-color: #bdab7c;
+  color: #212121;
+  padding: 0.65rem;
+}
+
+#recipieDetails {
+  display: flex;
+  flex-direction: column;
+  font-family: "Fira Sans", sans-serif;
+  background-color: #69615b;
+  color: #f5eec9;
+  width: 80%;
+  margin: 1rem auto;
+}
+#recipieDetails .recBox h4 {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.75rem 0;
+  background-color: #ad4120;
+  color: #e9dce0;
+}
+#recipieDetails .recBox .recdesc {
+  margin: 0;
+  padding: 1.5rem 0.5rem;
+  background-color: #58504a;
+}
+#recipieDetails .recBox .ingredients {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#recipieDetails .recBox .ingredients .ingredient {
+  display: flex;
+  flex-direction: row;
+  height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-left: 0.5rem;
+  width: 20%;
+  height: 10%;
+}
+#recipieDetails .recBox .ingredients .ingredient div {
+  width: 20%;
+  margin-right: 10%;
+  border: 2px solid #f8e3d4;
+  border-top-color: #201d16;
+  border-top-left-radius: 10px;
+  align-self: flex-start;
+}
+#recipieDetails .recBox .ingredients .ingredient .ing0 {
+  height: 1.3rem;
+  border-bottom: 0.2rem solid #ad4120;
+}
+#recipieDetails .recBox .ingredients .ingredient .ing1 {
+  height: 0.9rem;
+  border-bottom: 0.6rem solid #ac9a6b;
+}
+#recipieDetails .recBox .ingredients .ingredient .ing2 {
+  border-bottom: 1.3rem solid #f8e3d4;
+  height: 0.2rem;
+}
+#recipieDetails .recBox .directions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  padding-bottom: 3rem;
+}
+#recipieDetails .recBox .directions .dir {
+  margin-top: 1.5rem;
+}
+#recipieDetails .recBox .directions .subDir {
+  list-style-type: circle;
+  margin-left: 1.5rem;
 }
 
 #main {
