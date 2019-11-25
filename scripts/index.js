@@ -45,6 +45,10 @@ function changePage(num) {
             loadRecipies(recipies);
             switchActiveTab("recipies");
             break;
+        case 400:
+            let form = document.getElementById('addRecForm');
+            form.addEventListener('submit', handleSubmit);
+            break;
         default:
             break;
     }
@@ -63,10 +67,11 @@ let IsLoggedIn = false;
 if(getCookie("userAuth").length > 32) {
     IsLoggedIn = true;
 }
-
+/*
 if(IsLoggedIn) {
     document.getElementById('loginBox').innerHTML = "<button class='loginbutton'>Log Out</button>";
 } else {
     document.getElementById('loginBox').innerHTML = "<button onClick='changePage(200)' class='loginbutton'>Log In</button>";
     changePage(0);
-}
+}*/
+changePage(0);

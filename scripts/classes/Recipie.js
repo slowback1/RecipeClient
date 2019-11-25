@@ -40,7 +40,12 @@ class Recipie {
     }
     ProcessDirections(dir) {
         let resArr = [];
-        let dirArr = dir.split("&stop;");
+        let dirArr;
+        if(dir.includes("&stop;")) {
+             dirArr = dir.split("&stop;");
+        } else {
+            dirArr = dir.split("!stop;");
+        }
         dirArr.map(d => {
             let firstchar = d.trim().substring(0,1); 
             resArr.push(firstchar + d.trim().substr(1) + ".");
@@ -66,7 +71,7 @@ class Recipie {
         directions.map(dir => {
             let r = `<li class='dir `;
             let d;
-            if(dir.startsWith('&star;')) {
+            if(dir.startsWith('&star;') || dir.startsWith('!star;')) {
                 d = dir.substr(7);
                 r = r + `subDir'>`;
             } else {
