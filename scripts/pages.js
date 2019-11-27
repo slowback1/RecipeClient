@@ -1,8 +1,8 @@
 const NotLoggedInHtml = `
 <div class="hero">
     <div class="ctaBox">
-        <h1>Recipie Client</h1>
-        <h3>Sub-Header that gives more details on what this is</h3>
+        <h1>Andrew's Recipe Book</h1>
+        <h3>A growing collection of food instructions!</h3>
         <div class='ctaButtons'>
             <button class="ctaPrimary" onClick="changePage(300)">Go to Recipies</button>
             <button class="ctaSecondary" onClick="changePage(400)">Suggest a New Recipie</button>
