@@ -16,7 +16,6 @@ function handleSubmit(e) {
     let rdesc = document.getElementById('rdesc').value;
     let rtime = document.getElementById('rtime').value;
     let querystring = `{"RecipieName": "${name}", "RecipieDescription": "${rdesc}", "TimesCooked": ${rtime}, "RecipieIngredients": "${ingredients}", "RecipieDirections": "${directions}"}`;
-    console.log(querystring);
     let u = Config.baseURL + `/recipies/temporary/set?i=` + querystring;
     let o = {
         method: "POST"
@@ -24,9 +23,11 @@ function handleSubmit(e) {
     return fetch(u, o)
         .then(res => res.json())
         .then(json => {
-            if(json.responseCode === 200) {
+            if(json.responseID === 200) {
                 changePage(300);
             }
+            changePage(300);
+            addRecipieModal();
         })
         .catch(error => console.error(error));
 }
@@ -35,7 +36,7 @@ function parseIngredients(ingArr) {
     ingArr.map((ingElem) => {
         let ingName = ingElem.children[0].value;
         let ingCount = ingElem.children[1].value;
-        if(true) {
+        if(ingName !== "" && ingCount !== "-1") {
             res = res + `${ingName} ${ingCount},`;
         }
     });
@@ -50,7 +51,7 @@ function parseDirections(dirArr) {
         if(typeof dirElem.children[3] !== 'undefined') {
             isStar = dirElem.children[3].checked;
         }
-        if(true) {
+        if(direction !== "") {
             if(isStar) {
                 res = res + ` !star;`;
             } 
@@ -58,6 +59,13 @@ function parseDirections(dirArr) {
         }
     });
     return res;
+}
+function addRecipieModal() {
+    document.getElementById('modalAnchor').innerHTML = pages[302];
+    setTimeout(() => {removeModal()}, 5000);
+}
+function removeModal() {
+    document.getElementById('modalAnchor').innerHTML = "";
 }
 
 
@@ -83,6 +91,5 @@ function delForm(e) {
         target = e.target.parentNode.parentNode;
     }
     target.outerHTML = "";
-    console.log(e.target.parentNode.parentNode.id);
     return false;
 }

@@ -1,0 +1,18 @@
+nav {
+    .mobileNavBox {
+        @include flex-row();
+        height: 100%;
+        width: 5rem;
+        .hamburgerWrapper {
+            height: 100%;
+            width: 100%;
+            i {
+                font-size: 3.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+    .navBox, #loginBox {
+        display: none;
+    }
+}

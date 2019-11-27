@@ -14,6 +14,19 @@ function getCookie(cname) {
     }
     return "";
 }
+let modalSwitch = false;
+function toggleMobileModal() {
+    if(modalSwitch) {
+    removeModal();
+    window.onscroll=function(){};
+    modalSwitch = false;
+    } else {
+        window.scroll(0,0);
+        modalSwitch = true;
+        window.onscroll=function(){window.scrollTo(0,0);};
+        document.getElementById('modalAnchor').innerHTML = pages[1];
+    }
+}
 function loadRecipies(recarr) {
     let reshtml = `<h2>All Recipies</h2>`;
     recarr.map((rec, ind) => {
@@ -29,28 +42,32 @@ function getDetailedRecipie(ind) {
     document.getElementById('recipieDetails').innerHTML = rec.build(1);
 }
 function changePage(num) {
-    var main = document.getElementById('main');
-    main.innerHTML = pages[num];
-    switch(num) {
-        case 0:
-            switchActiveTab('home');
-            break;
-        case 100: 
-            switchActiveTab('about');
-            break;
-        case 200:
-            switchActiveTab('loginBox');
-            break;
-        case 300:
-            loadRecipies(recipies);
-            switchActiveTab("recipies");
-            break;
-        case 400:
-            let form = document.getElementById('addRecForm');
-            form.addEventListener('submit', handleSubmit);
-            break;
-        default:
-            break;
+    if(isReady) {
+        var main = document.getElementById('main');
+        main.innerHTML = pages[num];
+        window.scrollTo(0,0);
+        switch(num) {
+            case 0:
+                switchActiveTab('home');
+                break;
+            case 100: 
+                switchActiveTab('about');
+                break;
+            case 200:
+                switchActiveTab('loginBox');
+                break;
+            case 300:
+                loadRecipies(recipies);
+                switchActiveTab("recipies");
+                break;
+            case 400:
+                switchActiveTab('addRec');
+                let form = document.getElementById('addRecForm');
+                form.addEventListener('submit', handleSubmit);
+                break;
+            default:
+                break;
+        }
     }
 }
 function switchActiveTab(tabname) {
@@ -74,4 +91,3 @@ if(IsLoggedIn) {
     document.getElementById('loginBox').innerHTML = "<button onClick='changePage(200)' class='loginbutton'>Log In</button>";
     changePage(0);
 }*/
-changePage(0);

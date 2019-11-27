@@ -1,0 +1,22 @@
+.mobModal {
+    position: absolute;
+    z-index: 32000;
+    width: 100vw;
+    margin-top: 0;
+    height: 100vh;
+    background-color: $secondary-background;
+    color: $secondary-font;
+    font-family: $font-s;
+    @include flex-column();
+    align-items: center;
+    p {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+    p:hover, p:focus {
+        background-color: $secondary-selected;
+    }
+}

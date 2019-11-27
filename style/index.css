@@ -64,6 +64,9 @@ nav {
   justify-content: space-between;
   height: 3.5rem;
 }
+nav .mobileNavBox {
+  display: none;
+}
 nav .navBox, nav #loginBox {
   height: 100%;
   display: flex;
@@ -95,7 +98,7 @@ nav .navBox .selected, nav #loginBox .selected {
   border-color: #ac9a6b;
 }
 nav .staticBoxes {
-  width: 25%;
+  width: 75%;
   justify-content: space-around;
 }
 
@@ -147,6 +150,7 @@ footer .legal a {
   transition: 0.5s;
   border-radius: 10px;
   font-family: "Fira Sans", sans-serif;
+  padding-bottom: 2rem;
 }
 .hero .ctaBox h1 {
   text-align: center;
@@ -198,6 +202,7 @@ footer .legal a {
   height: 100%;
   margin: 0;
   padding: 0;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   background-color: #f8e3d4;
@@ -332,6 +337,22 @@ footer .legal a {
   width: 80%;
   margin: 1rem auto;
 }
+#recipieDetails .closeBtn {
+  position: absolute;
+  right: 12%;
+  margin-top: 10px;
+  border: 4px solid #201d16;
+  background-color: #58504a;
+  border-radius: 50%;
+  padding: 0.5rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 #recipieDetails .recBox h4 {
   margin: 0;
   width: 100%;
@@ -340,6 +361,7 @@ footer .legal a {
   padding: 0.75rem 0;
   background-color: #ad4120;
   color: #e9dce0;
+  margin-right: 20%;
 }
 #recipieDetails .recBox .recdesc {
   margin: 0;
@@ -367,6 +389,7 @@ footer .legal a {
   border-top-color: #201d16;
   border-top-left-radius: 10px;
   align-self: flex-start;
+  min-width: 42px;
 }
 #recipieDetails .recBox .ingredients .ingredient .ing0 {
   height: 1.3rem;
@@ -384,6 +407,7 @@ footer .legal a {
   display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
+  margin-right: 2rem;
   padding-bottom: 3rem;
 }
 #recipieDetails .recBox .directions .dir {
@@ -394,6 +418,298 @@ footer .legal a {
   margin-left: 1.5rem;
 }
 
+.addRecipie h2 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+.addRecipie #addRecForm {
+  display: flex;
+  flex-direction: column;
+}
+.addRecipie #addRecForm label {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0 1.5rem 2.5rem;
+  font-size: 2.2rem;
+}
+.addRecipie #addRecForm label input[type=text] {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  width: 50%;
+  height: 2.5rem;
+  font-size: 2.2rem;
+  border: none;
+  border-radius: 10px;
+  padding-left: 0.5rem;
+  background-color: #daaf61;
+  color: #222015;
+}
+.addRecipie #addRecForm label input[type=number] {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  width: 5rem;
+  height: 2.5rem;
+  font-size: 2.2rem;
+  border: none;
+  border-radius: 10px;
+  padding-left: 0.5rem;
+  background-color: #daaf61;
+  color: #222015;
+  -moz-appearance: textfield !important;
+  -webkit-appearance: none;
+}
+.addRecipie #addRecForm label input[type=number]::-webkit-outer-spin-button,
+.addRecipie #addRecForm label input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.addRecipie #addRecForm #ingredientListAdd div {
+  display: flex;
+  flex-direction: row;
+  margin-left: 4rem;
+  margin-top: 0.5rem;
+}
+.addRecipie #addRecForm #ingredientListAdd div input[type=text] {
+  padding-left: 0.5rem;
+  margin-right: 1rem;
+  background-color: #daaf61;
+  color: #222015;
+  border-radius: 10px;
+  width: 30%;
+  font-size: 2.2rem;
+}
+.addRecipie #addRecForm #ingredientListAdd div select {
+  background-color: #daaf61;
+  color: #222015;
+  border-radius: 10px;
+  width: 20%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1.4rem;
+}
+.addRecipie #addRecForm #directionListAdd {
+  display: flex;
+  flex-direction: column;
+}
+.addRecipie #addRecForm #directionListAdd div {
+  display: flex;
+  flex-direction: row;
+  margin-left: 4rem;
+  margin-top: 0.5rem;
+  align-items: flex-start;
+}
+.addRecipie #addRecForm #directionListAdd div input[type=text], .addRecipie #addRecForm #directionListAdd div textarea {
+  padding-left: 0.5rem;
+  margin-right: 1rem;
+  background-color: #daaf61;
+  color: #222015;
+  border-radius: 10px;
+  font-size: 2.2rem;
+}
+.addRecipie #addRecForm #directionListAdd div input[type=checkbox] {
+  margin-left: 0.75rem;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  background-color: #daaf61;
+}
+.addRecipie #addRecForm #directionListAdd div p {
+  margin-left: 0.5rem;
+}
+.addRecipie #addRecForm input[type=submit] {
+  align-self: center;
+  background-color: #be5231;
+  color: #e9dce0;
+  width: 40%;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  padding: 0.75rem 0;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+.addRecipie #addRecForm input[type=submit]:hover {
+  background-color: #ad4120;
+}
+
+.addBtn {
+  background-color: #39cc26;
+  color: #e8e9e8;
+  border: 2px solid #e8e9e8;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.rmBtn {
+  background-color: #ec3131;
+  color: #f1dfdf;
+  border: 2px solid #f1dfdf;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.loadingScreen {
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loadingScreen p {
+  font-size: 2rem;
+}
+.loadingScreen .loadSubH {
+  font-size: 1.5rem;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #201d16;
+  margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mobModal {
+  position: absolute;
+  z-index: 32000;
+  width: 100vw;
+  margin-top: 0;
+  height: 100vh;
+  background-color: #bdab7c;
+  color: #212121;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobModal p {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.mobModal p:hover, .mobModal p:focus {
+  background-color: #ac9a6b;
+}
+
 #main {
   height: 100%;
   min-height: 42rem;
@@ -402,6 +718,143 @@ footer .legal a {
   background-color: #f8e3d4;
 }
 
+.modal {
+  position: absolute;
+  top: 0rem;
+  left: 25%;
+  width: 50%;
+  background-color: #f5f0d4;
+  color: #37382b;
+  height: 4rem;
+  border-radius: 10px;
+  animation: animModal 4s forwards;
+  animation-timing-function: cubic-bezier(1, 0.11, 0.3, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.modal p {
+  font-size: 2rem;
+  font-family: "Fira Sans", sans-serif;
+}
+
+@keyframes animModal {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: property;
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translate(0, 5rem);
+    -ms-transform: translate(0, 5rem);
+    transform: property;
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translate(0, 5rem);
+    -ms-transform: translate(0, 5rem);
+    transform: property;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: property;
+  }
+}
+@media screen and (max-width: 970px) {
+  #recipieDetails {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 870px) {
+  #recipieDetails .recBox .ingredients .ingredient {
+    width: 30%;
+  }
+
+  .hero .ctaBox {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .addRecipie #addRecForm label {
+    margin-left: 0.5rem;
+  }
+  .addRecipie #addRecForm label input[type=text], .addRecipie #addRecForm label input[type=number] {
+    margin-left: 0;
+  }
+  .addRecipie #addRecForm #directionListAdd div, .addRecipie #addRecForm #ingredientListAdd div {
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column !important;
+  }
+  .addRecipie #addRecForm #directionListAdd div input[type=text], .addRecipie #addRecForm #directionListAdd div select, .addRecipie #addRecForm #ingredientListAdd div input[type=text], .addRecipie #addRecForm #ingredientListAdd div select {
+    width: 50%;
+  }
+  .addRecipie #addRecForm #directionListAdd div .btns, .addRecipie #addRecForm #ingredientListAdd div .btns {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-direction: row !important;
+  }
+  .addRecipie #addRecForm #directionListAdd div textarea, .addRecipie #addRecForm #ingredientListAdd div textarea {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 590px) {
+  #recipieDetails .closeBtn {
+    margin-top: 38px;
+  }
+  #recipieDetails .recBox .ingredients .ingredient {
+    width: 45%;
+  }
+
+  .hero .ctaBox {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  nav .mobileNavBox {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 5rem;
+  }
+  nav .mobileNavBox .hamburgerWrapper {
+    height: 100%;
+    width: 100%;
+  }
+  nav .mobileNavBox .hamburgerWrapper i {
+    font-size: 3.5rem;
+    cursor: pointer;
+  }
+  nav .navBox, nav #loginBox {
+    display: none;
+  }
+
+  .modal {
+    width: 75%;
+    left: 12.5%;
+  }
+
+  #recipiePage .recBox {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 390px) {
+  #recipieDetails .recBox .ingredients .ingredient {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 body {
   overflow-x: hidden;
 }

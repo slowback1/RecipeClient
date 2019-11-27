@@ -5,6 +5,22 @@
     color: $s-button-font;
     width: 80%;
     margin: 1rem auto;
+
+    .closeBtn {
+        position: absolute;
+        right: 12%;
+        margin-top: 10px;
+        border: 4px solid $primary-font;
+        background-color: $s-selected;
+        border-radius: 50%;
+        padding: 0.5rem;
+        height: 0.5rem;
+        width: 0.5rem;
+        @include flex-row();
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
     .recBox {
         h4 {
             margin: 0;
@@ -14,6 +30,7 @@
             padding: .75rem 0;
             background-color: $button-selected;
             color: $button-font;
+            margin-right: 20%;
         }
         .recdesc {
             margin: 0;
@@ -35,6 +52,7 @@
                     border-top-color: $primary-font;
                     border-top-left-radius: 10px;
                     align-self: flex-start;
+                    min-width: 42px;
                 }
                 .ing0 {
                     height: 1.3rem;
@@ -55,8 +73,10 @@
         .directions {
             @include flex-column();
             margin-left: 1.5rem;
+            margin-right: 2rem;
             .dir {
                 margin-top: 1.5rem;
+                
             }
             .subDir {
                 list-style-type: circle;

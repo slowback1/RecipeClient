@@ -25,16 +25,22 @@ class Recipie {
         let ingsArr = ing.split(",");
         ingsArr.map(a => {
             let ingArr = a.split(' ');
+            let ra = [];
             if(ingArr.length > 2) {
                 ingArr.shift();
             }
-            for(var i = 0; i > ingArr[1].length; i++) {
-                char = ingArr[1].charAt(i);
+            ra.push(ingArr[0]);
+            let b = "";
+            for(var i = 0; i < ingArr[1].length; i++) {
+                let char = ingArr[1].charAt(i);
                 if(char == char.toUpperCase()) {
-                    ingArr[1] = ingArr[1].substr(0,i) + " " + char.toLowerCase() + ingArr[1].substr(i);
+                    b = b + " " + char.toLowerCase();
+                } else {
+                    b = b + char;
                 }
             }
-            resArr.push(ingArr);
+            ra.push(b);
+            resArr.push(ra);
         });
         return resArr;
     }
@@ -58,7 +64,7 @@ class Recipie {
             response = response + `<div class="recBox" onClick='getDetailedRecipie(${index})'><h4>${this.name} <i class="far fa-clock"></i>${this.times} Minutes</h4><p>${this.description}</p></div>`;
             return response;
         }
-        response = `<div class="recBox"'><h4>${this.name} <i class="far fa-clock"></i>${this.times} Minutes</h4><p class='recdesc'>${this.description}</p>`
+        response = `<div class="closeBtn" onClick="changePage(300)"><i class="fas fa-times"></i></div><div class="recBox"'><h4>${this.name} <p> <i class="far fa-clock"></i>${this.times} Minutes </p></h4><p class='recdesc'>${this.description}</p>`
         let ingredients = this.ProcessIngredients(this.ingredients);
         let directions = this.ProcessDirections(this.directions);
         let resIng = `<div class='ingredients'>`;

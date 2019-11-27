@@ -1,4 +1,5 @@
 let recipies = [];
+let isReady = false;
 function fetchData() {
     const url = Config.baseURL + "/recipies/permenant/get";
     const options = {
@@ -17,6 +18,8 @@ function fetchData() {
                     item.RecipieDirections
                 ));
             });   
+            isReady = true;
+            setTimeout(() => {changePage(0);}, 500);
         })
         .catch(error => console.error(error));
 }

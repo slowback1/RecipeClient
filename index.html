@@ -12,18 +12,28 @@
     <nav>
           <div class="navBox staticBoxes">
               <p id="home" class="selected" onClick="changePage(0)"><i class="fa fa-home"></i></p>
-              <p id="about" onClick="changePage(100)">About</p>
-              <p id="recipies" onClick="changePage(300)">Recipies</p>
-              <p id="addRec" onClick="changePage(400)">Add Recipie</p>
-          </div>  
+              <p id="about" onClick="changePage(100)">About This</p>
+              <p id="recipies" onClick="changePage(300)">View Recipies</p>
+              <p id="addRec" onClick="changePage(400)">Suggest Recipie</p>
+          </div>
+          <div class="mobileNavBox">
+            <div class="hamburgerWrapper" onClick="toggleMobileModal()">
+                <i class="fas fa-bars"></i>
+            </div>
+          </div> 
     </nav>
+    <div id="modalAnchor"></div>
     <div id="main">
         <noscript>Please enable JavaScript in your browser.</noscript>
-
+        <div class="loadingScreen">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <p>Now Loading...</p>
+            <p class="loadSubH">If this is taking more than a few seconds, reload the page</p>
+        </div>
     </div>
     <footer>
         <div class="cr">
-            <div>&copy;   <div id="year"></div>    Andrew Wobeck</div>
+            <div><p>&copy;</p>   <div id="year"></div>    <p>Andrew Wobeck</p></div>
         </div>
         <div class="legal">
             <p>Icons Provided by <a href="https://fontawesome.com/"> FontAwesome </a></p>

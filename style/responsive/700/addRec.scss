@@ -1,0 +1,30 @@
+.addRecipie {
+    #addRecForm {
+        label {
+            margin-left: 0.5rem;
+            input[type=text], input[type=number] {
+                margin-left: 0;
+            }
+        }
+        #directionListAdd, #ingredientListAdd {
+            div {
+                margin-left: 0.5rem;
+                @include flex-column();
+                flex-direction: column !important;
+                input[type=text], select {
+                    width: 50%;
+                }
+                .btns {
+                    margin: 0.5rem 0;
+                    @include flex-row();
+                    flex-direction: row !important;
+                }
+                textarea {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+

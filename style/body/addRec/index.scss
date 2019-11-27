@@ -1,0 +1,155 @@
+.addRecipie {
+    h2 {
+        font-size: 2.5rem;
+        margin: 1.5rem 0 1.5rem 2rem;
+    }
+    #addRecForm {
+        @include flex-column();
+
+
+        label {
+            @include flex-column();
+            margin: .5rem 0 1.5rem 2.5rem;
+            font-size: 2.2rem;
+            input[type=text] {
+                margin-top: 0.5rem;
+                margin-left: 1.5rem;
+                width: 50%;
+                height: 2.5rem;
+                font-size: 2.2rem;
+                border: none;
+                border-radius: 10px;
+                padding-left: .5rem;
+                background-color: $form-background;
+                color: $form-font;
+            }
+            input[type=number] {
+                margin-top: 0.5rem;
+                margin-left: 1.5rem;
+                width: 5rem;
+                height: 2.5rem;
+                font-size: 2.2rem;
+                border: none;
+                border-radius: 10px;
+                padding-left: 0.5rem;
+                background-color: $form-background;
+                color: $form-font;
+                -moz-appearance: textfield !important;
+                -webkit-appearance: none;
+            }
+            input[type=number]::-webkit-outer-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                margin: 0;
+            }
+            
+        }
+        #ingredientListAdd {
+            div {
+                @include flex-row();
+                margin-left: 4rem;
+                margin-top: 0.5rem;
+
+                input[type=text] {
+                    padding-left: .5rem;
+                    margin-right: 1rem;
+                    background-color: $form-background;
+                    color: $form-font;
+                    border-radius: 10px;
+                    width: 30%;
+                    font-size: 2.2rem;
+                }
+                select {
+                    background-color: $form-background;
+                    color: $form-font;
+                    border-radius: 10px;
+                    width: 20%;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    font-size: 1.4rem;
+                    
+                }
+                
+
+
+            }
+        }
+        #directionListAdd {
+            @include flex-column();
+            div {
+                @include flex-row();
+                margin-left: 4rem;
+                margin-top: 0.5rem;
+                align-items: flex-start;
+
+                input[type=text], textarea {
+                    padding-left: 0.5rem;
+                    margin-right: 1rem;
+                    background-color: $form-background;
+                    color: $form-font;
+                    border-radius: 10px;
+                    font-size: 2.2rem;
+                }
+                input[type=checkbox] {
+                    margin-left: 0.75rem;
+                    align-self: flex-start;
+                    margin-top: 0.25rem;
+                    background-color: $form-background;
+                }
+                p {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+        input[type=submit] {
+            align-self: center;
+            background-color: $button-background;
+            color: $button-font;
+            width: 40%;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.5s;
+            padding: 0.75rem 0;
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+        input[type=submit]:hover {
+            background-color: $button-selected;
+        }
+    }
+}
+.addBtn {
+    background-color: $addBtnBackground;
+    color: $addBtnFont;
+    border: 2px solid $addBtnFont;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.rmBtn {
+    background-color: $rmBtnBackground;
+    color: $rmBtnFont;
+    border: 2px solid $rmBtnFont;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    align-items :center;
+    justify-content: center;
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
